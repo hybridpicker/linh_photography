@@ -53,6 +53,7 @@
     grid-column: 1 /span 3;
     grid-row: 2;
     text-align: left;
+    margin-left: -3rem;
   }
   .item5 {
     grid-column: 1 / span 3;
@@ -60,10 +61,77 @@
   }
   .item4 > img{
     height: 35rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
   }
+
+  .overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(240, 240, 240,);
+  background-color: rgba(240, 240, 240, 0.9);
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #2F5181;
+  display: block;
+  transition: 0.3s;
+  padding: 1rem;
+  letter-spacing: 0.2rem;
+  font-size: 38px;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #B89646;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+.portrait.even{
+  border-radius: 0 12px 12px 0;
+}
+.portrait{
+  border-radius: 12px;
+}
+.landscape.even{
+  border-radius: 0 12px 12px 0;
+}
+.landscape{
+  border-radius: 12px;
+}
 </style>
 </head>
 <body>
+  <nav id="linh-Nav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+      <img src="media/graphic/crossburger.png" alt="">
+    </a>
+    <div class="overlay-content">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Site Notice</a>
+    </div>
+  </nav>
+
   <main class="linh-page-container">
     <div class="grid-linh logo">
       <img src="media/graphic/logo_linh.png" alt="">
@@ -74,11 +142,25 @@
       <a href="#">Story III</a>
     </nav>
     <div class="grid-linh item3">
-      <img src="media/graphic/hamburger.png" alt="">
+      <a id="linh-nav-open"class="openbtn" onclick="openNav()">
+        <img src="media/graphic/hamburger.png" alt="">
+      </a>
     </div>
     <section class="grid-linh item4">
       {% for photo in photos %}
-      <img style=""src="{{ photo.images.url }}" alt="">
+      {% if photo.images.height <= photo.images.width %}
+      {% if forloop.counter|divisibleby:2 %}
+      <img class="landscape" style=""src="{{ photo.images.url }}" alt="">
+      {% else %}
+      <img class="landscape even" style=""src="{{ photo.images.url }}" alt="">
+      {% endif %}
+      {% else %}
+      {% if forloop.counter|divisibleby:2 %}
+      <img class="portrait" style=""src="{{ photo.images.url }}" alt="">
+      {% else %}
+      <img class="portrait even" style=""src="{{ photo.images.url }}" alt="">
+      {% endif %}
+      {% endif %}
       {% endfor %}
     </section>
     <footer class="grid-linh item5">
@@ -86,6 +168,16 @@
     </footer>
 
 
-  </body>
 </body>
+<script>
+function openNav() {
+  document.getElementById("linh-Nav").style.display = "block";
+  document.getElementById("linh-nav-open").style.visibility = "hidden";
+}
+
+function closeNav() {
+  document.getElementById("linh-Nav").style.display = "none";
+  document.getElementById("linh-nav-open").style.visibility = "visible";
+}
+</script>
 </html>

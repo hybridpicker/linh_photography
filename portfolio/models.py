@@ -23,13 +23,6 @@ class Photo(models.Model):
         default='portfolio_imageDefault', blank=True)
     description = models.TextField(null=True, blank=True)
     ordering = models.IntegerField(null=True, blank=True)
-    link = models.URLField(
-        _("Link"),
-        max_length=128,
-        db_index=True,
-        unique=True,
-        blank=True
-    )
     category = models.ForeignKey(
         PhotoCategory,
         on_delete=models.CASCADE, blank=True, null=True)
