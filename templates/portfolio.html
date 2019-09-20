@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>PORTFOLIO!</h1>
+    Category: {{ category_id }}
+    {% for photo in photos %}
+    <img style=""src="{{ photo.images.url }}" alt="">
+    {% endfor %}
+  </body>
+</html>
