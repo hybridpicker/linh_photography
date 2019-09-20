@@ -1,14 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>PORTFOLIO!</h1>
-    Category: {{ category_id }}
-    {% for photo in photos %}
-    <img style=""src="{{ photo.images.url }}" alt="">
-    {% endfor %}
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+  body{
+    font-family: 'Poppins', sans-serif;
+  }
+  .item2 a{
+    color: #2F5181;
+    text-decoration: none;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    letter-spacing: 0.15rem;
+    font-family: 'Poppins ExtraLight', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .item2 a:hover{
+    color: #B89646;
+  }
+  .linh-page-container {
+    display: grid;
+    padding: 10px;
+    margin-right: 70px;
+  }
+
+  .grid-linh {
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+  }
+  .logo {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .item2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .item3 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .item2, .item3{
+    margin-top: 2.5rem;
+  }
+  .item4 {
+    grid-column: 1 /span 3;
+    grid-row: 2;
+    text-align: left;
+  }
+  .item5 {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+  }
+  .item4 > img{
+    height: 35rem;
+  }
+</style>
+</head>
+<body>
+  <main class="linh-page-container">
+    <div class="grid-linh logo">
+      <img src="media/graphic/logo_linh.png" alt="">
+    </div>
+    <nav class="grid-linh item2">
+      <a href="#">Story I</a>
+      <a href="#">Story II</a>
+      <a href="#">Story III</a>
+    </nav>
+    <div class="grid-linh item3">
+      <img src="media/graphic/hamburger.png" alt="">
+    </div>
+    <section class="grid-linh item4">
+      {% for photo in photos %}
+      <img style=""src="{{ photo.images.url }}" alt="">
+      {% endfor %}
+    </section>
+    <footer class="grid-linh item5">
+      Footer
+    </footer>
+
+
   </body>
+</body>
 </html>
