@@ -23,10 +23,12 @@
   .item2 a:hover{
     color: #B89646;
   }
+  .item2 a.active{
+    color: #B89646;
+  }
   .linh-page-container {
     display: grid;
     padding: 10px;
-    margin-right: 70px;
   }
 
   .grid-linh {
@@ -41,6 +43,7 @@
   .item2 {
     grid-column: 2;
     grid-row: 1;
+    width: 36rem;
   }
   .item3 {
     grid-column: 3;
@@ -60,64 +63,109 @@
     grid-row: 3;
   }
   .item4 > img{
-    height: 35rem;
+    max-height: 35rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
+    max-width: 100%;
   }
 
   .overlay {
-  height: 100%;
-  width: 100%;
-  display: none;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(240, 240, 240,);
-  background-color: rgba(240, 240, 240, 0.9);
-}
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(240, 240, 240,);
+    background-color: rgba(240, 240, 240, 0.9);
+  }
 
-.overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #2F5181;
-  display: block;
-  transition: 0.3s;
-  padding: 1rem;
-  letter-spacing: 0.2rem;
-  font-size: 38px;
-}
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #2F5181;
+    display: block;
+    transition: 0.3s;
+    padding: 1rem;
+    letter-spacing: 0.2rem;
+    font-size: 38px;
+  }
 
-.overlay a:hover, .overlay a:focus {
-  color: #B89646;
-}
+  .overlay a:hover, .overlay a:focus {
+    color: #B89646;
+  }
 
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
-.portrait.even{
-  border-radius: 0 12px 12px 0;
-}
-.portrait{
-  border-radius: 12px;
-}
-.landscape.even{
-  border-radius: 0 12px 12px 0;
-}
-.landscape{
-  border-radius: 12px;
-}
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  .portrait.even{
+    border-radius: 0 12px 12px 0;
+  }
+  .portrait{
+    border-radius: 12px;
+  }
+  .landscape.even{
+    border-radius: 0 12px 12px 0;
+  }
+  .landscape{
+    border-radius: 12px;
+  }
+  @media only screen and (max-width: 890px) {
+    body{
+      overflow-x: hidden;
+    }
+    .logo {
+      grid-area: logo;
+      text-align: left;
+    }
+    .item3 { grid-area: menu; }
+    .item2 {
+      grid-area: header;
+      margin-top: 0;
+      width: 100%;
+      padding: 0;
+      line-height: 4rem;
+      margin-bottom: 2rem;
+    }
+    .item4 {
+      grid-area: main;
+      margin: 0;
+      max-width: 100%;
+      padding: 0;
+     }
+    .item5{ grid-area: footer; }
+    .linh-page-container{
+      grid-template-areas:
+    'logo menu'
+    'header header'
+    'main main'
+    'footer footer';
+    padding: 0;
+    }
+    .overlay-content{
+      margin-top:0;
+      top: 22%;
+    }
+    .closebtn{
+      top:0;
+    }
+    .overlay a{
+      font-size: 33px;
+      padding-bottom: 0;
+    }
+  }
 </style>
 </head>
 <body>
@@ -137,9 +185,13 @@
       <img src="media/graphic/logo_linh.png" alt="">
     </div>
     <nav class="grid-linh item2">
-      <a href="#">Story I</a>
-      <a href="#">Story II</a>
-      <a href="#">Story III</a>
+      {% for category in category %}
+      {% if category.id == category_id %}
+      <a class="active" href="?category={{category.id}}">{{category}}</a>
+      {% else %}
+      <a href="?category={{category.id}}">{{category}}</a>
+      {% endif %}
+      {% endfor %}
     </nav>
     <div class="grid-linh item3">
       <a id="linh-nav-open"class="openbtn" onclick="openNav()">
@@ -164,20 +216,19 @@
       {% endfor %}
     </section>
     <footer class="grid-linh item5">
-      Footer
     </footer>
 
 
-</body>
-<script>
-function openNav() {
-  document.getElementById("linh-Nav").style.display = "block";
-  document.getElementById("linh-nav-open").style.visibility = "hidden";
-}
+  </body>
+  <script>
+  function openNav() {
+    document.getElementById("linh-Nav").style.display = "block";
+    document.getElementById("linh-nav-open").style.visibility = "hidden";
+  }
 
-function closeNav() {
-  document.getElementById("linh-Nav").style.display = "none";
-  document.getElementById("linh-nav-open").style.visibility = "visible";
-}
+  function closeNav() {
+    document.getElementById("linh-Nav").style.display = "none";
+    document.getElementById("linh-nav-open").style.visibility = "visible";
+  }
 </script>
 </html>

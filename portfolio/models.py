@@ -13,6 +13,7 @@ class PhotoCategory(models.Model):
         '''
         Meta class for PhotoCategory
         '''
+        ordering = ['title']
         verbose_name = u'Photo Category'
         verbose_name_plural = u'Photo Categories'
 
@@ -28,12 +29,12 @@ class Photo(models.Model):
         on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
-        return str(self.title)
+        return '%s: %s' % (self.category, self.title)
 
     class Meta:
         '''
         Meta class for Photo
         '''
-        ordering = ['ordering']
+        ordering = ['category','ordering']
         verbose_name = u'Photo'
         verbose_name_plural = u'Photos'
