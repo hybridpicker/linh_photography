@@ -7,6 +7,14 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
   <style>
+  html{
+    min-height: 100%;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 66%, rgba(232,232,232,1) 100%, rgba(242,242,242,1) 105%);
+    background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 66%, rgba(232,232,232,1) 100%, rgba(242,242,242,1) 105%);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 66%, rgba(232,232,232,1) 100%, rgba(242,242,242,1) 105%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#f2f2f2",GradientType=1);
+  }
   body{
     font-family: 'Poppins', sans-serif;
   }
@@ -77,8 +85,8 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(240, 240, 240,);
-    background-color: rgba(240, 240, 240, 0.9);
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   .overlay-content {
@@ -144,15 +152,15 @@
       margin: 0;
       max-width: 100%;
       padding: 0;
-     }
+    }
     .item5{ grid-area: footer; }
     .linh-page-container{
       grid-template-areas:
-    'logo menu'
-    'header header'
-    'main main'
-    'footer footer';
-    padding: 0;
+      'logo menu'
+      'header header'
+      'main main'
+      'footer footer';
+      padding: 0;
     }
     .overlay-content{
       margin-top:0;
