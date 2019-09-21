@@ -130,6 +130,20 @@
   .landscape{
     border-radius: 12px;
   }
+  #overlay-show-img{
+    padding-top: 2rem;
+    max-height: calc(100% - 4rem);
+    max-width: 100%;
+  }
+  #overlay-image-section{
+    text-align: center;
+    background: #000000de;
+  }
+  #overlay-image-section .closebtn{
+    top: 0rem;
+    padding-top: 0;
+    margin-top: 0;
+  }
   @media only screen and (max-width: 890px) {
     body{
       overflow-x: hidden;
@@ -209,19 +223,17 @@
     <section class="grid-linh item4">
       {% for photo in photos %}
       {% if photo.images.height <= photo.images.width %}
-      {% if forloop.counter|divisibleby:2 %}
-      <img class="landscape" style=""src="{{ photo.images.url }}" alt="">
+      <img onclick="showImg({{photo.id}})" id="{{photo.id}}" class="landscape" style=""src="{{ photo.images.url }}" alt="">
       {% else %}
-      <img class="landscape even" style=""src="{{ photo.images.url }}" alt="">
-      {% endif %}
-      {% else %}
-      {% if forloop.counter|divisibleby:2 %}
-      <img class="portrait" style=""src="{{ photo.images.url }}" alt="">
-      {% else %}
-      <img class="portrait even" style=""src="{{ photo.images.url }}" alt="">
-      {% endif %}
+      <img onclick="showImg({{photo.id}})" id="{{photo.id}}" class="portrait" style=""src="{{ photo.images.url }}" alt="">
       {% endif %}
       {% endfor %}
+    </section>
+    <section onclick="blockImg()" id="overlay-image-section" class="overlay image">
+      <img id="overlay-show-img" src="" alt="">
+      <a href="javascript:void(0)" class="closebtn" onclick="blockImg()">
+        <img src="media/graphic/crossburger_img.png" alt="">
+      </a>
     </section>
     <footer class="grid-linh item5">
     </footer>
@@ -229,6 +241,15 @@
 
   </body>
   <script>
+  function showImg(id){
+    src = document.getElementById(id).src
+    document.getElementById("overlay-show-img").src = src
+    document.getElementById("overlay-image-section").style.display = "block";
+    console.log(src)
+  }
+  function blockImg(){
+    document.getElementById("overlay-image-section").style.display = "none";
+  }
   function openNav() {
     document.getElementById("linh-Nav").style.display = "block";
     document.getElementById("linh-nav-open").style.visibility = "hidden";
