@@ -30,44 +30,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon/favicon-16x16.png" %}">
   <meta name="msapplication-TileImage" content="{% static "favicon/ms-icon-144x144.png" %}">
 
-  <style>
-.about-photo { grid-area: menu; }
-.about-text { grid-area: main; }
-
-.about-container {
-  display: grid;
-  grid-template-areas:
-    'menu main main main';
-  grid-gap: 2rem;
-  padding: 10px;
-}
-
-.about-container > div {
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-}
-.about-photo {
-  text-align: center;
-}
-.about-photo img{
-  max-width: 25rem;
-  margin-left: 2rem;
-  border-radius: 12px;
-}
-.about-text p {
-  font-size: 22px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  color:#2b2b2b;
-  font-family: 'Poppins ExtraLight';
-}
-.about-text h1{
-  margin-top: -1rem;
-  color: #2F5181;
-  letter-spacing: 0.22rem;
-}
-</style>
 </head>
 <body>
   <nav id="linh-Nav" class="overlay" onclick="closeNav()">
@@ -75,7 +37,7 @@
       <img src="media/graphic/crossburger.png" alt="">
     </a>
     <div class="overlay-content">
-      <a href="{% url 'about_view' %}">About</a>
+      <a href="{% url 'portfolio_view' %}">Stories</a>
       <a href="{% url 'contact_view' %}">Contact</a>
       <a href="{% url 'site_notice_view' %}">Site Notice</a>
     </div>

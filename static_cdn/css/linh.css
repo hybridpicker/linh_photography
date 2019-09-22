@@ -158,7 +158,10 @@ body{
     grid-area: logo;
     text-align: left;
   }
-  .item3 { grid-area: menu; }
+  .item3 {
+    grid-area: menu;
+    text-align: right;
+  }
   .item2 {
     grid-area: header;
     margin-top: 0;

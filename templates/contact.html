@@ -29,6 +29,15 @@
   <link rel="icon" type="image/png" sizes="96x96" href="{% static "favicon/favicon-96x96.png" %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon/favicon-16x16.png" %}">
   <meta name="msapplication-TileImage" content="{% static "favicon/ms-icon-144x144.png" %}">
+  <style media="screen">
+    .item4{
+      margin: 0;
+    }
+    .item4 > img:hover{
+      filter:none;
+      cursor:default;
+    }
+  </style>
 </head>
 <body>
   <nav id="linh-Nav" class="overlay" onclick="closeNav()">
@@ -36,8 +45,8 @@
       <img src="media/graphic/crossburger.png" alt="">
     </a>
     <div class="overlay-content">
+      <a href="{% url 'portfolio_view' %}">Stories</a>
       <a href="{% url 'about_view' %}">About</a>
-      <a href="{% url 'contact_view' %}">Contact</a>
       <a href="{% url 'site_notice_view' %}">Site Notice</a>
     </div>
   </nav>
@@ -54,7 +63,11 @@
         onmouseout="this.src='media/graphic/hamburger.png'">
       </a>
     </div>
-    <section class="grid-linh item4">
+    <section class="grid-linh item4 contact-container">
+      <h1>Contact</h1>
+      <h2><a href="mailto:office@linh-schroeter.com">office@linh-schroeter.com</a></h2>
+      <h2>+43 677 612 679 94‬</h2>
+      <img src="media/contact/Linh_Introducing text_pic.jpg" alt="">
     </section>
     <footer class="grid-linh item5">
     </footer>

@@ -23,7 +23,7 @@ def about_view (request):
     return render(request, 'about.html')
 
 def contact_view (request):
-    return render(request, 'about.html')
+    return render(request, 'contact.html')
 
 def site_notice_view (request):
-    return render(request, 'about.html')
+    return render(request, 'site_notice.html')
