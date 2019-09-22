@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -6,192 +8,27 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
-  <style>
-  html{
-    min-height: 100%;
-    background: rgb(255,255,255);
-    background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 66%, rgba(232,232,232,1) 100%, rgba(242,242,242,1) 105%);
-    background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 66%, rgba(232,232,232,1) 100%, rgba(242,242,242,1) 105%);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 66%, rgba(232,232,232,1) 100%, rgba(242,242,242,1) 105%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#f2f2f2",GradientType=1);
-  }
-  body{
-    font-family: 'Poppins', sans-serif;
-  }
-  .item2 a{
-    color: #2F5181;
-    text-decoration: none;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    letter-spacing: 0.15rem;
-    font-family: 'Poppins ExtraLight', sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-  }
-  .item2 a:hover{
-    color: #B89646;
-  }
-  .item2 a.active{
-    color: #B89646;
-  }
-  .linh-page-container {
-    display: grid;
-    padding: 10px;
-  }
+  <link rel="stylesheet" href="{% static "css/linh.css" %}" type="text/css" media="screen">
 
-  .grid-linh {
-    text-align: center;
-    padding: 20px;
-    font-size: 30px;
-  }
-  .logo {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .item2 {
-    grid-column: 2;
-    grid-row: 1;
-    width: 36rem;
-  }
-  .item3 {
-    grid-column: 3;
-    grid-row: 1;
-  }
-  .item2, .item3{
-    margin-top: 2.5rem;
-  }
-  .item4 {
-    grid-column: 1 /span 3;
-    grid-row: 2;
-    text-align: left;
-    margin-left: -3rem;
-  }
-  .item5 {
-    grid-column: 1 / span 3;
-    grid-row: 3;
-  }
-  .item4 > img{
-    max-height: 35rem;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-    max-width: 100%;
-  }
-
-  .overlay {
-    height: 100%;
-    width: 100%;
-    display: none;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(255, 255, 255);
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-
-  .overlay-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-  }
-  .overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #2F5181;
-    display: block;
-    transition: 0.3s;
-    padding: 1rem;
-    letter-spacing: 0.2rem;
-    font-size: 38px;
-  }
-
-  .overlay a:hover, .overlay a:focus {
-    color: #B89646;
-  }
-
-  .overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-  }
-  .portrait.even{
-    border-radius: 0 12px 12px 0;
-  }
-  .portrait{
-    border-radius: 12px;
-  }
-  .landscape.even{
-    border-radius: 0 12px 12px 0;
-  }
-  .landscape{
-    border-radius: 12px;
-  }
-  #overlay-show-img{
-    padding-top: 2rem;
-    max-height: calc(100% - 4rem);
-    max-width: 100%;
-  }
-  #overlay-image-section{
-    text-align: center;
-    background: #000000de;
-  }
-  #overlay-image-section .closebtn{
-    top: 0rem;
-    padding-top: 0;
-    margin-top: 0;
-  }
-  @media only screen and (max-width: 890px) {
-    body{
-      overflow-x: hidden;
-    }
-    .logo {
-      grid-area: logo;
-      text-align: left;
-    }
-    .item3 { grid-area: menu; }
-    .item2 {
-      grid-area: header;
-      margin-top: 0;
-      width: 100%;
-      padding: 0;
-      line-height: 4rem;
-      margin-bottom: 2rem;
-    }
-    .item4 {
-      grid-area: main;
-      margin: 0;
-      max-width: 100%;
-      padding: 0;
-    }
-    .item5{ grid-area: footer; }
-    .linh-page-container{
-      grid-template-areas:
-      'logo menu'
-      'header header'
-      'main main'
-      'footer footer';
-      padding: 0;
-    }
-    .overlay-content{
-      margin-top:0;
-      top: 22%;
-    }
-    .closebtn{
-      top:0;
-    }
-    .overlay a{
-      font-size: 33px;
-      padding-bottom: 0;
-    }
-  }
-</style>
+  <!-- icons -->
+  <link rel="icon" href="{% static "favicon/favicon.ico" %}"/>
+  <link rel="apple-touch-icon" sizes="57x57" href="{% static "favicon/apple-icon-57x57.png" %}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{% static "favicon/apple-icon-60x60.png" %}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static "favicon/apple-icon-72x72.png" %}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static "favicon/apple-icon-76x76.png" %}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static "favicon/apple-icon114x114.png" %}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static "favicon/apple-icon-120x120.png" %}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{% static "favicon/apple-icon-144x144.png" %}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static "favicon/apple-icon-152x152.png" %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static "favicon/apple-icon-180x180.png" %}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{% static "favicon/android-icon-192x192.png" %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static "favicon/favicon-32x32.png" %}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static "favicon/favicon-96x96.png" %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon/favicon-16x16.png" %}">
+  <meta name="msapplication-TileImage" content="{% static "favicon/ms-icon-144x144.png" %}">
 </head>
 <body>
-  <nav id="linh-Nav" class="overlay">
+  <nav id="linh-Nav" class="overlay" onclick="closeNav()">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
       <img src="media/graphic/crossburger.png" alt="">
     </a>
@@ -217,7 +54,9 @@
     </nav>
     <div class="grid-linh item3">
       <a id="linh-nav-open"class="openbtn" onclick="openNav()">
-        <img src="media/graphic/hamburger.png" alt="">
+        <img src="media/graphic/hamburger.png" alt=""
+        onmouseover="this.src='media/graphic/hamburger_cropped.png'"
+        onmouseout="this.src='media/graphic/hamburger.png'">
       </a>
     </div>
     <section class="grid-linh item4">
