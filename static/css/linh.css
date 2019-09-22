@@ -47,6 +47,7 @@ h2 a:hover{
   font-family: 'Poppins Regular', sans-serif;
   font-size: 30px;
   font-weight: 300;
+  white-space: nowrap;
 }
 .item2 a:hover{
   color: #BDCDDE;
