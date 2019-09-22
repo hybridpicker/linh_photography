@@ -18,3 +18,12 @@ def portfolio_view (request):
             'category_id': category_id,
     }
     return render(request, 'portfolio.html', context)
+
+def about_view (request):
+    return render(request, 'about.html')
+
+def contact_view (request):
+    return render(request, 'about.html')
+
+def site_notice_view (request):
+    return render(request, 'about.html')

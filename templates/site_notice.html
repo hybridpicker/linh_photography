@@ -46,15 +46,7 @@
     <a class="grid-linh logo" href="{% url 'portfolio_view' %}">
       <img src="media/graphic/logo_linh.png" alt="">
     </a>
-    <nav class="grid-linh item2">
-      {% for category in category %}
-      {% if category.id == category_id %}
-      <a class="active" href="?category={{category.id}}">{{category}}</a>
-      {% else %}
-      <a href="?category={{category.id}}">{{category}}</a>
-      {% endif %}
-      {% endfor %}
-    </nav>
+    <nav class="grid-linh item2"></nav>
     <div class="grid-linh item3">
       <a id="linh-nav-open"class="openbtn" onclick="openNav()">
         <img src="media/graphic/hamburger.png" alt=""
@@ -63,43 +55,22 @@
       </a>
     </div>
     <section class="grid-linh item4">
-      {% for photo in photos %}
-      {% if photo.images.height <= photo.images.width %}
-      <img onclick="showImg({{photo.id}})" id="{{photo.id}}" class="landscape" style=""src="{{ photo.images.url }}" alt="">
-      {% else %}
-      <img onclick="showImg({{photo.id}})" id="{{photo.id}}" class="portrait" style=""src="{{ photo.images.url }}" alt="">
-      {% endif %}
-      {% endfor %}
-    </section>
-    <section onclick="blockImg()" id="overlay-image-section" class="overlay image">
-      <img id="overlay-show-img" src="" alt="">
-      <a href="javascript:void(0)" class="closebtn" onclick="blockImg()">
-        <img src="media/graphic/crossburger_img.png" alt="">
-      </a>
     </section>
     <footer class="grid-linh item5">
     </footer>
+  </main>
 
 
-  </body>
-  <script>
-  function showImg(id){
-    src = document.getElementById(id).src
-    document.getElementById("overlay-show-img").src = src
-    document.getElementById("overlay-image-section").style.display = "block";
-    console.log(src)
-  }
-  function blockImg(){
-    document.getElementById("overlay-image-section").style.display = "none";
-  }
-  function openNav() {
-    document.getElementById("linh-Nav").style.display = "block";
-    document.getElementById("linh-nav-open").style.visibility = "hidden";
-  }
+</body>
+<script>
+function openNav() {
+  document.getElementById("linh-Nav").style.display = "block";
+  document.getElementById("linh-nav-open").style.visibility = "hidden";
+}
 
-  function closeNav() {
-    document.getElementById("linh-Nav").style.display = "none";
-    document.getElementById("linh-nav-open").style.visibility = "visible";
-  }
+function closeNav() {
+  document.getElementById("linh-Nav").style.display = "none";
+  document.getElementById("linh-nav-open").style.visibility = "visible";
+}
 </script>
 </html>
