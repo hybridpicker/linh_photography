@@ -73,6 +73,8 @@ h2 a:hover{
   grid-column: 2;
   grid-row: 1;
   width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .item3 {
   grid-column: 3;
@@ -86,9 +88,7 @@ h2 a:hover{
 }
 .item4 {
   grid-column: 1 /span 3;
-  grid-row: 2;
-  text-align: left;
-  margin-left: -3rem;
+  text-align: center;
   max-width: 1800px;
 }
 .item5 {
