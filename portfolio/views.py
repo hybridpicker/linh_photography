@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from portfolio.models import Photo, PhotoCategory
@@ -27,3 +27,6 @@ def contact_view (request):
 
 def site_notice_view (request):
     return render(request, 'site_notice.html')
+
+def view_404(request, *args, **kwargs):
+    return redirect('portfolio_view')
