@@ -105,9 +105,8 @@ h2 a:hover{
   transition: transform .2s ease;
 }
 .item4 > img:hover {
-  -webkit-filter: sepia(40%);/* Safari 6.0 - 9.0 */
-  filter: sepia(40%);
   cursor: pointer;
+  transform: scale(1.02);
 }
 .overlay {
   height: 100%;
@@ -226,8 +225,13 @@ h2 a:hover{
   margin-top: -2rem;
 }
 @media only screen and (max-width: 890px) {
-  body{
+  body, html {
     overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    height: 100%;
+    width: 100%;
   }
   .logo {
     grid-area: logo;
@@ -284,6 +288,12 @@ h2 a:hover{
   }
   .about-photo img{
     margin:0;
+  }
+}
+@media only screen and (max-width: 812px) {
+  body,html{
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 @media only screen and (max-width: 510px) {
