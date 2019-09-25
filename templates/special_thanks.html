@@ -30,13 +30,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon/favicon-16x16.png" %}">
   <meta name="msapplication-TileImage" content="{% static "favicon/ms-icon-144x144.png" %}">
   <style media="screen">
-    .item4{
-      margin: 0;
+    a{
+      color:#7491B0
     }
-    .item4 > img:hover{
-      filter:none;
-      cursor:default;
-      transform:none;
+    a:hover{
+      color:#214161
     }
   </style>
 </head>
@@ -49,7 +47,7 @@
       <a href="{% url 'portfolio_view' %}">Stories</a>
       <a href="{% url 'about_view' %}">About</a>
       <a href="{% url 'faq_view' %}">FAQ</a>
-      <a href="{% url 'special_view' %}">Links</a>
+      <a href="{% url 'contact_view' %}">Contact</a>
       <a href="{% url 'site_notice_view' %}">Site Notice</a>
     </div>
   </nav>
@@ -66,27 +64,40 @@
         onmouseout="this.src='media/graphic/hamburger.png'">
       </a>
     </div>
-    <section class="grid-linh item4 contact-container">
-      <h1>Contact</h1>
-      <h2><a href="mailto:linh.nguyenvnat@gmail.com ">linh.nguyenvnat@gmail.com</a></h2>
-      <h2>+43 677 612 679 94‬</h2>
-      <img src="media/contact/Linh_Introducing text_pic.jpg" alt="" style="border-radius: 20px;">
+    <section class="grid-linh item4">
+      <h1>Special Thanks To:</h1>
+      <h2>Melanie Nedelko</h2>
+      <p>Photography mentor, Fine Art photographer</p>
+      <p><a href="https://www.melanienedelko.com" target="_blank" rel="noopener noreferrer">www.melanienedelko.com</a></p>
+      <br>
+      <h2>Julia Lohninger</h2>
+      <p>Graphic Designer</p>
+      <p><a href="https://www.facebook.com/illohstration" target="_blank" rel="noopener noreferrer">facebook.com/illohstration</a></p>
+      <p><a href="https://www.instagram.com/julia_lohninger/" target="_blank" rel="noopener noreferrer">instagram.com/julia_lohninger</a></p>
+      <br>
+      <h2>Lukas Schönsgibl, BA</h2>
+      <p>Web Developer</p>
+      <p><a href="https://www.schoensgibl.com" target="_blank" rel="noopener noreferrer">www.schoensgibl.com</a></p>
+      <br>
+      <h2>Phillip Schröter</h2>
+      <p><a href="https://phillip-schroeter.com/" target="_blank" rel="noopener noreferrer">www.phillip-schroeter.com</a></p>
+      <br>
     </section>
     <footer class="grid-linh item5">
     </footer>
-    </main>
+  </main>
 
 
-  </body>
-  <script>
-  function openNav() {
-    document.getElementById("linh-Nav").style.display = "block";
-    document.getElementById("linh-nav-open").style.visibility = "hidden";
-  }
+</body>
+<script>
+function openNav() {
+  document.getElementById("linh-Nav").style.display = "block";
+  document.getElementById("linh-nav-open").style.visibility = "hidden";
+}
 
-  function closeNav() {
-    document.getElementById("linh-Nav").style.display = "none";
-    document.getElementById("linh-nav-open").style.visibility = "visible";
-  }
+function closeNav() {
+  document.getElementById("linh-Nav").style.display = "none";
+  document.getElementById("linh-nav-open").style.visibility = "visible";
+}
 </script>
 </html>

@@ -31,5 +31,8 @@ def site_notice_view (request):
 def faq_view (request):
     return render(request, 'faq.html')
 
+def special_view (request):
+    return render(request, 'special_thanks.html')
+
 def view_404(request, *args, **kwargs):
     return redirect('portfolio_view')
