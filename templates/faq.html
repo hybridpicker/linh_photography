@@ -29,18 +29,16 @@
   <link rel="icon" type="image/png" sizes="96x96" href="{% static "favicon/favicon-96x96.png" %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon/favicon-16x16.png" %}">
   <meta name="msapplication-TileImage" content="{% static "favicon/ms-icon-144x144.png" %}">
-
-  <!-- Social Media Meta --->
-  <meta property="og:title" content="Linh Schröter Photography">
-  <meta property="og:description" content="Portfolio page of Linh Schröter. Passionate photographer.">
-  <meta property="og:image" content="media/thumbnails/facebook/linh_home.png">
-  <meta property="og:url" content="http://linhschroeter.com/">
-
-  <meta name="twitter:title" content="Linh Schröter Photography">
-  <meta name="twitter:description" content="Portfolio page of Linh Schröter. Passionate photographer.">
-  <meta name="twitter:image" content="media/thumbnails/twitter/linh_home.png">
-  <meta name="twitter:card" content="summary_large_image">
-
+  <style media="screen">
+    .item4{
+      margin: 0;
+    }
+    .item4 > img:hover{
+      filter:none;
+      cursor:default;
+      transform:none;
+    }
+  </style>
 </head>
 <body>
   <nav id="linh-Nav" class="overlay" onclick="closeNav()">
@@ -48,8 +46,8 @@
       <img src="media/graphic/crossburger.png" alt="">
     </a>
     <div class="overlay-content">
+      <a href="{% url 'portfolio_view' %}">Stories</a>
       <a href="{% url 'about_view' %}">About</a>
-      <a href="{% url 'faq_view' %}">FAQ</a>
       <a href="{% url 'contact_view' %}">Contact</a>
       <a href="{% url 'site_notice_view' %}">Site Notice</a>
     </div>
@@ -59,15 +57,7 @@
     <a class="grid-linh logo" href="{% url 'portfolio_view' %}">
       <img src="media/graphic/logo_linh.png" alt="">
     </a>
-    <nav class="grid-linh item2">
-      {% for category in category %}
-      {% if category.id == category_id %}
-      <a class="active" href="?category={{category.id}}">{{category}}</a>
-      {% else %}
-      <a href="?category={{category.id}}">{{category}}</a>
-      {% endif %}
-      {% endfor %}
-    </nav>
+    <nav class="grid-linh item2"></nav>
     <div class="grid-linh item3">
       <a id="linh-nav-open"class="openbtn" onclick="openNav()">
         <img src="media/graphic/hamburger.png" alt=""
@@ -76,35 +66,30 @@
       </a>
     </div>
     <section class="grid-linh item4">
-      {% for photo in photos %}
-      {% if photo.images.height <= photo.images.width %}
-      <img onclick="showImg({{photo.id}})" id="{{photo.id}}" class="landscape" style=""src="{{ photo.images.url }}" alt="">
-      {% else %}
-      <img onclick="showImg({{photo.id}})" id="{{photo.id}}" class="portrait" style=""src="{{ photo.images.url }}" alt="">
-      {% endif %}
-      {% endfor %}
-    </section>
-    <section onclick="blockImg()" id="overlay-image-section" class="overlay image">
-      <img id="overlay-show-img" src="" alt="">
-      <a href="javascript:void(0)" class="closebtn" onclick="blockImg()">
-        <img src="media/graphic/crossburger_img.png" alt="">
-      </a>
+      <div class="faq-container">
+      <div class="faq-text">
+      <h1>Questions and Answers</h1>
+      <h2>How do you manage/ prepare for a photo shooting?</h2>
+      <p>First things first, I would love to meet you at least one day in advance to talk about the details so we can get to know each other and share our ideas (I am a good listener, so please feel free to speak what’s on your mind) in order to find the best way to cooperate with each other :).</p>
+      <h2>What is your style?‬</h2>
+      <p>As you can see, my photos have a little bit of a moody style. They are dark and contrasty and I am totally in love with them! Besides, I love to capture the most natural moments of my clients as that is a very important factor which helps me create their best stories.</p>
+      <p>But, on another approach, you might have seen some of my work which are candid shoots. Yep, either I or my clients planned it to be like that because I also love to be creative and do something different and crazy too :D</p>
+      <h2>How much does one shooting cost?</h2>
+      <p>I do not only offer one specific shoot but different ones. As I wrote in the introduction, each and every one of you is unique and your story is special so you are always welcome to come and talk and decide how you want your shoot to be: the duration, the location, what topic, etc.</p>
+      <p>Please write me via the contact form to book a date and receive more details!</p>
+      </div>
+      <div class="faq-img">
+        <img src="media/faq/faq_pic.jpg" alt="" style="border-radius: 20px;">
+      </div>
+      </div>
     </section>
     <footer class="grid-linh item5">
     </footer>
+    </main>
 
 
   </body>
   <script>
-  function showImg(id){
-    src = document.getElementById(id).src
-    document.getElementById("overlay-show-img").src = src
-    document.getElementById("overlay-image-section").style.display = "block";
-    console.log(src)
-  }
-  function blockImg(){
-    document.getElementById("overlay-image-section").style.display = "none";
-  }
   function openNav() {
     document.getElementById("linh-Nav").style.display = "block";
     document.getElementById("linh-nav-open").style.visibility = "hidden";

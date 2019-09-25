@@ -28,5 +28,8 @@ def contact_view (request):
 def site_notice_view (request):
     return render(request, 'site_notice.html')
 
+def faq_view (request):
+    return render(request, 'faq.html')
+
 def view_404(request, *args, **kwargs):
     return redirect('portfolio_view')
