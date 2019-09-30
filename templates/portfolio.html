@@ -76,7 +76,7 @@
         onmouseout="this.src='media/graphic/hamburger.png'">
       </a>
     </div>
-    <section class="grid-linh item4">
+    <section class="grid-linh item4 portfolio-linh">
       {% for photo in photos %}
       {% if photo.images.height <= photo.images.width %}
       <img onclick="showImg({{photo.id}})" id="{{photo.id}}" class="landscape" style=""src="{{ photo.images.url }}" alt="">

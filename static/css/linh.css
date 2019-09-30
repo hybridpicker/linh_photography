@@ -254,6 +254,16 @@ h2 a:hover{
     margin-left: 2rem;
     border-radius: 12px;
 }
+.portfolio-linh{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+@media only screen and (max-width: 1330px) {
+.item4 > img{
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+}
 @media only screen and (max-width: 890px) {
   body, html {
     overflow-x: hidden;
