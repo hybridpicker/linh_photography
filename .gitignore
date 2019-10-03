@@ -5,8 +5,8 @@
 __pycache__/
 local_settings.py
 db.sqlite3
-media
-settings.py
+#media
+#settings.py
 static_cdn/
 
 ### Django.Python Stack ###
