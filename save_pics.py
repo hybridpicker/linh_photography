@@ -4,9 +4,8 @@ import shutil
 
 def save_pics():
 
-    directories = ["/Users/lukasschonsgibl/Desktop/Linh/Story I/",
-                   "/Users/lukasschonsgibl/Desktop/Linh/Story II/",
-                   "/Users/lukasschonsgibl/Desktop/Linh/Story III/"]
+    directories = []
+    
     c = 1
     for dir in directories:
         os.chdir(dir)
