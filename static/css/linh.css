@@ -73,6 +73,16 @@ h2 a:hover{
   grid-column: 1;
   grid-row: 1;
 }
+#linh-logo{
+  height: 136px;
+  width: 136px;
+}
+#hamburger{
+  width: 37px;
+  height: 27px;
+}
+.st2{clip-path:url(#SVGID_2_);}
+.st3{fill:#C78C21;}
 .item2 {
   grid-column: 2;
   grid-row: 1;

@@ -56,14 +56,12 @@
 
   <main class="linh-page-container">
     <a class="grid-linh logo" href="{% url 'portfolio_view' %}">
-      <img src="media/graphic/logo_linh.png" alt="">
+      {% include "svg/logo.html" %}
     </a>
     <nav class="grid-linh item2"></nav>
     <div class="grid-linh item3">
       <a id="linh-nav-open"class="openbtn" onclick="openNav()">
-        <img src="media/graphic/hamburger.png" alt=""
-        onmouseover="this.src='media/graphic/hamburger_cropped.png'"
-        onmouseout="this.src='media/graphic/hamburger.png'">
+        {% include "svg/hamburger.html" %}
       </a>
     </div>
     <section class="grid-linh item4">

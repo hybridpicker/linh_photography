@@ -9,5 +9,4 @@ urlpatterns = [
     path('site-notice', views.site_notice_view, name='site_notice_view'),
     path('faq', views.faq_view, name='faq_view'),
     path('special-thanks', views.special_view, name='special_view'),
-
 ]
