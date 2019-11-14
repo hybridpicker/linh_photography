@@ -26,6 +26,17 @@
   <meta name="twitter:image" content="media/thumbnails/twitter/linh_home.png">
   <meta name="twitter:card" content="summary_large_image">
 
+  <style media="screen">
+  #go-back{
+    width: 6vw;
+  }
+  @media only screen and (max-width: 1000px) {
+    #go-back{
+      display:none;
+    }
+  }
+  </style>
+
 </head>
 <body>
   <nav id="linh-Nav" class="overlay" onclick="closeNav()">
@@ -75,28 +86,42 @@
       </a>
     </section>
     <footer class="grid-linh item5">
-    </footer>
+      <a href="#top">
+        <svg version="1.1" id="go-back" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 48.9 26.9" style="enable-background:new 0 0 48.9 26.9;" xml:space="preserve">
+        <style type="text/css">
+        .st12{fill:#2F5181;}
+      </style>
+      <g id="icon" transform="translate(-305.565 -636.565)">
+        <path id="Rechteck_4" class="st12" d="M331.8,638l21.2,21.2c0.8,0.8,0.8,2,0,2.8l0,0c-0.8,0.8-2,0.8-2.8,0L329,640.8
+        c-0.8-0.8-0.8-2,0-2.8l0,0C329.8,637.2,331,637.2,331.8,638z"/>
+        <path id="Rechteck_7" class="st12" d="M331,640.8L309.8,662c-0.8,0.8-2,0.8-2.8,0l0,0c-0.8-0.8-0.8-2,0-2.8l21.2-21.2
+        c0.8-0.8,2-0.8,2.8,0l0,0C331.8,638.8,331.8,640,331,640.8z"/>
+      </g>
+    </svg>
+  </a>
+</footer>
 
 
-  </body>
-  <script>
-  function showImg(id){
-    src = document.getElementById(id).src
-    document.getElementById("overlay-show-img").src = src
-    document.getElementById("overlay-image-section").style.display = "block";
-    console.log(src)
-  }
-  function blockImg(){
-    document.getElementById("overlay-image-section").style.display = "none";
-  }
-  function openNav() {
-    document.getElementById("linh-Nav").style.display = "block";
-    document.getElementById("linh-nav-open").style.visibility = "hidden";
-  }
+</body>
+<script>
+function showImg(id){
+  src = document.getElementById(id).src
+  document.getElementById("overlay-show-img").src = src
+  document.getElementById("overlay-image-section").style.display = "block";
+  console.log(src)
+}
+function blockImg(){
+  document.getElementById("overlay-image-section").style.display = "none";
+}
+function openNav() {
+  document.getElementById("linh-Nav").style.display = "block";
+  document.getElementById("linh-nav-open").style.visibility = "hidden";
+}
 
-  function closeNav() {
-    document.getElementById("linh-Nav").style.display = "none";
-    document.getElementById("linh-nav-open").style.visibility = "visible";
-  }
+function closeNav() {
+  document.getElementById("linh-Nav").style.display = "none";
+  document.getElementById("linh-nav-open").style.visibility = "visible";
+}
 </script>
 </html>
