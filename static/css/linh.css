@@ -211,11 +211,17 @@ h2 a:hover{
 }
 .about-photo {
   text-align: center;
+  display: grid;
+  grid-gap: 2rem;
 }
 .about-photo img{
   max-width: 25rem;
   margin-left: 2rem;
   border-radius: 12px;
+}
+.about-photo > a > img{
+  max-width: 10rem;
+  margin:auto;
 }
 .about-text p {
   font-size: 22px;
@@ -344,7 +350,7 @@ h2 a:hover{
                          'main';
   }
   .about-photo img, .faq-img img{
-    margin:0;
+    margin: auto;
   }
   .faq-container {
     grid-template-areas: 'menu'
